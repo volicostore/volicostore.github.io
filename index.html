@@ -30,7 +30,7 @@
       <div class="penjelasan" id="penjelasan">
         <h3 class="title">Coba Kamu Ingat Kembali, Apakah Kamu Pernah Mengalami Kendala Seperti Di Bawah Ini ?</h3>
         <ul>
-          <li>Beli case murag ga sampai sebulan sudah luntur warnanya</li>
+          <li>Beli case murah ga sampai sebulan sudah luntur warnanya</li>
           <li>Banyak motif casing dijual diluar sana tapi desain tidak original (asal comot dari om gugel)</li>
           <li>Motif desainnya sudah kadaluarsa alias gak di update</li>
           <li>Gak bisa request pakai desain sendiri</li>
@@ -203,19 +203,48 @@
       </div>
     </div>
 
-    <!-- <form name="submit-to-google-sheet" style="visibility: hidden">
-      <input name="status" type="text" value="OK" />
+    <form name="Buka Web" style="visibility: hidden">
+      <input name="status" type="text" value="Buka Web" />
+    </form>
+    <form name="Klik CTA" style="visibility: hidden">
+      <input name="status" type="text" value="Klik CTA" />
+    </form>
+    <form name="Masuk WA" style="visibility: hidden">
+      <input name="status" type="text" value="Masuk WA" />
     </form>
 
     <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbz07kQqWHBOTEgfCXcSiw-cR_Rqjrkpzgd4-BJT2m4cwSZhz52INJ2lRp7PN-WpmGot/exec";
-      const form = document.forms["submit-to-google-sheet"];
-      console.log(form);
+      function bukaWeb() {
+        const scriptURL = "https://script.google.com/macros/s/AKfycbz07kQqWHBOTEgfCXcSiw-cR_Rqjrkpzgd4-BJT2m4cwSZhz52INJ2lRp7PN-WpmGot/exec";
+        const form = document.forms["Buka Web"];
+        console.log(form);
 
-      fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then((response) => console.log("Success!", response))
-        .catch((error) => console.error("Error!", error.message));
-    </script> -->
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      }
+      bukaWeb();
+
+      function klikCta() {
+        const scriptURL = "https://script.google.com/macros/s/AKfycbz07kQqWHBOTEgfCXcSiw-cR_Rqjrkpzgd4-BJT2m4cwSZhz52INJ2lRp7PN-WpmGot/exec";
+        const form = document.forms["Klik CTA"];
+        console.log(form);
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      }
+
+      function masukWa() {
+        const scriptURL = "https://script.google.com/macros/s/AKfycbz07kQqWHBOTEgfCXcSiw-cR_Rqjrkpzgd4-BJT2m4cwSZhz52INJ2lRp7PN-WpmGot/exec";
+        const form = document.forms["Masuk WA"];
+        console.log(form);
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      }
+    </script>
     <script>
       var modal = document.getElementById("modal");
 
@@ -227,6 +256,7 @@
 
       // When the user clicks the button, open the modal
       btn.onclick = function () {
+        klikCta();
         modal.style.display = "flex";
       };
 
@@ -248,9 +278,7 @@
         var hp = document.querySelector("#hp").value;
         var casing = document.querySelector("#casing").value;
         window.location.assign("https://wa.me/628164244166?text=Saya%20" + nama + ",%20apakah%20" + casing + "%20untuk%20" + hp + "%20tersedia?");
-        console.log(nama);
-        console.log(hp);
-        console.log(casing);
+        masukWa();
       }
     </script>
   </body>
